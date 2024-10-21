@@ -1,11 +1,12 @@
 # FakeNewsAnnotation
 **¿Have you ever tested your skills at distinguising Fake from Real news?** With this app you can finally find if you can detect when an article is not being honest. Using data from the [Fake News Net](https://github.com/KaiDMML/FakeNewsNet) dataset we have gathered a smaller corpus that you will annotate. For each article you will be asked to provide one label: real or fake. When all the articles have been annotated your statistics will be showed.
 
-# Installation guide
+# Getting started
 1. Download the .zip file with the content of this git.
 2. Extract the .zip file and place it in a directory that you will remember.
 3. Go to the directory in which you have placed the content of the .zip file.
-4. Depending on your OS download the corresponding executable file [clicking here]()
+4. Depending on your OS download the corresponding executable file [clicking here](https://drive.google.com/drive/folders/12KRRyW_CYjnMf9misZu4-H-zCUZE7Ysz?usp=sharing)
+5. Place the downloaded file in the extracted folder and run it.
 
 # Any trouble?
 If you cannot run the corresponding executable file of the 4th step try the following:
