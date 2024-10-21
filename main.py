@@ -219,7 +219,10 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title("Fake News Classification")
     root.configure(bg=BG_COLOR)
-    root.iconphoto(True, tk.PhotoImage(file='prhlt_logo.png'))
+    try:
+        root.iconphoto(True, tk.PhotoImage(file='prhlt_logo.png'))
+    except:
+        messagebox.showwarning("Warning", "The logo file could not be found. Please make sure it is in the same directory as the script:\n" + os.path.join(os.getcwd(),'prhlt_logo.png'))
     
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
