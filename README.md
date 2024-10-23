@@ -4,9 +4,8 @@
 # Getting started
 1. Download the .zip file with the content of this git.
 2. Extract the .zip file and place it in a directory that you will remember.
-3. Depending on your OS download the corresponding executable file [clicking here](https://drive.google.com/drive/folders/12KRRyW_CYjnMf9misZu4-H-zCUZE7Ysz?usp=sharing) into that directory.
-4. Go to the directory in which you have placed the content of the .zip file and the downloaded executable file.
-5. Place the downloaded file in the extracted folder and run it.
+3. Depending on your OS download the corresponding executable file [clicking here](https://drive.google.com/drive/folders/12KRRyW_CYjnMf9misZu4-H-zCUZE7Ysz?usp=sharing).
+4. Place the downloaded file in the extracted folder and run it.
 
 # Any trouble?
 If you cannot run the corresponding executable file of the 4th step try the following:
