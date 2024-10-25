@@ -46,8 +46,10 @@ def read_data(path):
     data = read_json(path)
     data = data[data['task'] == task].sample(MAX)
     texts = data['text'].tolist()
-    headlines = data['title'].tolist()
-    labels = [LABEL[l] for l in data['label']]
+    headlines = data['title'].tolist() if task == 'fake news' else ['']*MAX
+    labels = [LABEL[l] for l in data['label']] if task == 'fake news' else data['HS'].tolist()
+    if task == 'hate speech':
+        MAX = 20
     return texts, headlines, labels
 
 def create_rounded_rectangle(canvas, x1, y1, x2, y2, radius, **kwargs):
@@ -192,7 +194,8 @@ def load_next_text():
         text_display.insert(tk.END, texts[curr_t])
         classification_var.set("")
         index_label.config(text=f"Article {curr_t + 1} of {len(texts)}")
-        headline.config(text=headlines[curr_t])
+        if task == 'fake news':
+            headline.config(text=headlines[curr_t])
         progress_bar.set(curr_t / len(texts) * 100)
     else:
         # f1 = f1_score(gold, result)
@@ -335,11 +338,11 @@ if __name__ == "__main__":
     global task
     show_initial_options()
 
-    try:
-        texts, headlines, gold = read_data(DATA_PATH)
-    except:
-        messagebox.showerror("Error", "The data file could not be read.\nIt must be a JSON file located at: " + os.path.join(os.getcwd(),DATA_PATH) + "\nIf it is there, it might be corrupted.")
-        exit(1)
+    #try:
+    texts, headlines, gold = read_data(DATA_PATH)
+    # except:
+    #     messagebox.showerror("Error", "The data file could not be read.\nIt must be a JSON file located at: " + os.path.join(os.getcwd(),DATA_PATH) + "\nIf it is there, it might be corrupted.")
+    #     exit(1)
     result = [0]*len(texts)
     curr_t = 0
 
