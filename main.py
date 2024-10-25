@@ -13,7 +13,7 @@ from email.mime.multipart import MIMEMultipart
 # CONSTANTES DE CONTROL
 DATA_PATH = 'data.json'
 LABEL = {'Real': 1, 'Fake': 0}
-MAX = 1
+MAX = 10
 # COLORES
 BG_COLOR = "#f0f0f0"
 HEADLINE_COLOR = "#2c3e50"
@@ -28,7 +28,7 @@ CONTROL_FONT = ('georgia', 14)
 # EMAIL
 SENDER_EMAIL = "bot.fake.news@gmail.com"
 SENDER_PASSWORD = "rnufmrkqbnsafwyr "  # App password, not regular Gmail password
-RECEIVER_EMAIL = "sergiogg1yo@gmail.com"
+RECEIVER_EMAIL = "prosso@dsic.upv.es"
 
 def read_data(path):
     '''
