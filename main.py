@@ -250,7 +250,7 @@ def send_email(sender_email, sender_password, recipient_email, subject, body):
             text = message.as_string()
             server.sendmail(sender_email, recipient_email, text)
             
-        print("Email sent successfully!")
+        #print("Email sent successfully!")
         return True
         
     except Exception as e:
