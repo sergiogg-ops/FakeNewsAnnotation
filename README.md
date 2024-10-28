@@ -1,6 +1,8 @@
 # Fake News Annotation
 **¿Have you ever tested your skills at distinguising fake from real news?** With this app you can finally find out if you can detect when an article is not being honest. Using data from the [Fake News Net](https://github.com/KaiDMML/FakeNewsNet) dataset we have gathered a smaller corpus that you will annotate. For each article you will be asked to provide one label: real or fake. When all the articles have been annotated your statistics will be displayed.
 
+There is also a hate speech mode in which you can also annotate whether a tweet contains it. For this task, we have used data from the [Hateval dataset](https://www.aclweb.org/anthology/S19-2007/).
+
 # Getting started
 1. Download the .zip file with the content of this git.
 2. Extract the .zip file and place it in a directory that you will remember.
