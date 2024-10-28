@@ -13,7 +13,6 @@ from email.mime.multipart import MIMEMultipart
 # CONSTANTES DE CONTROL
 DATA_PATH = 'data.json'
 LABEL = {'Real': 1, 'Fake': 0}
-MAX = 10
 # COLORES
 BG_COLOR = "#f0f0f0"
 HEADLINE_COLOR = "#2c3e50"
@@ -43,13 +42,15 @@ def read_data(path):
         labels (list): The list of labels.
     '''
     global task
+    if task == 'hate speech':
+        MAX = 50
+    else:
+        MAX = 20
     data = read_json(path)
     data = data[data['task'] == task].sample(MAX)
     texts = data['text'].tolist()
     headlines = data['title'].tolist() if task == 'fake news' else ['']*MAX
     labels = [LABEL[l] for l in data['label']] if task == 'fake news' else data['HS'].tolist()
-    if task == 'hate speech':
-        MAX = 20
     return texts, headlines, labels
 
 def create_rounded_rectangle(canvas, x1, y1, x2, y2, radius, **kwargs):
@@ -268,7 +269,10 @@ def ask_user_name():
         user_name = entry.get()
         if user_name:
             # Email details
-            subject = f"Fake news classification: {user_name}"
+            if task == 'fake news':
+                subject = f"Fake news classification: {user_name}"
+            else:
+                subject = f"Hate speech classification: {user_name}"
             body = f"Report of {user_name}:\n\tF1 Score: {f1:.2%}\n\tAccuracy: {acc:.2%}"
             
             # Send email
